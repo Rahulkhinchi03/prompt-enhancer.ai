@@ -70,24 +70,24 @@ This project and everyone participating in it are governed by our [Code of Condu
    cd prompt-enhancer.ai
    ```
 
-2. Setup Backend
-
-   ```bash
-   npm install
-   npm run setup
-   ```
-
-3. Setup Frontend
+2. Setup Frontend
 
    ```bash
    cd frontend
    npm install
    ```
 
+2. Setup Backend
+
+   ```bash
+    cd ..
+   npm install
+   npm run setup
+   ```
+
 4. Run the Application
 
    ```bash
-   # From the project root
    npm run dev  # Starts both frontend and backend
    ```
 
