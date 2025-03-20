@@ -61,7 +61,6 @@ AI Prompt Enhancer is designed to transform basic prompts into optimized, high-q
 4. Run the Application
 
    ```bash
-   # From the project root
    npm run dev  # Starts both frontend and backend
    ```
 
