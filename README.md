@@ -43,18 +43,19 @@ AI Prompt Enhancer is designed to transform basic prompts into optimized, high-q
    cd prompt-enhancer.ai
    ```
 
-2. Setup Backend
-
-   ```bash
-   npm install
-   npm run setup
-   ```
-
-3. Setup Frontend
+2. Setup Frontend
 
    ```bash
    cd frontend
    npm install
+   ```
+
+2. Setup Backend
+
+   ```bash
+    cd ..
+   npm install
+   npm run setup
    ```
 
 4. Run the Application
