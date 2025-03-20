@@ -63,37 +63,33 @@ This project and everyone participating in it are governed by our [Code of Condu
 
 ### Local Development
 
-1. Fork and clone the repository
+1. Clone the repository
 
    ```bash
    git clone https://github.com/Rahulkhinchi03/prompt-enhancer.git
    cd prompt-enhancer
    ```
 
-2. Install dependencies
+2. Setup Backend
 
    ```bash
-   # Backend
    npm install
+   npm run setup
+   ```
 
-   # Frontend
+3. Setup Frontend
+
+   ```bash
    cd frontend
    npm install
+   npm run setup
    ```
 
-3. Configure Environment
-   - Copy `.env.example` to `.env` in both backend and frontend
-   - Add your Mistral or OpenAI API key
+4. Run the Application
 
    ```bash
-   cp .env.example .env
-   ```
-
-4. Run the application
-
-   ```bash
-   # From project root
-   npm run dev
+   # From the project root
+   npm run dev  # Starts both frontend and backend
    ```
 
 ## Coding Guidelines 📝
@@ -119,7 +115,7 @@ This project and everyone participating in it are governed by our [Code of Condu
 - Use clear, descriptive commit messages
 - Use present tense
 - Use the imperative mood
-- Limit first line to 72 characters
+- Limit the first line to 72 characters
 - Reference issue numbers when applicable
 
 ## Testing 🧪
@@ -142,7 +138,7 @@ This project and everyone participating in it are governed by our [Code of Condu
 
 ## Code Review Process 🕵️
 
-1. PR will be reviewed by maintainers
+1. Maintainers will review PR
 2. Feedback and suggestions will be provided
 3. Changes may be requested
 4. Once approved, PR will be merged
