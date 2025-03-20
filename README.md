@@ -65,32 +65,6 @@ AI Prompt Enhancer is designed to transform basic prompts into optimized, high-q
    npm run dev  # Starts both frontend and backend
    ```
 
-## 🔐 API Key Security
-
-This project includes several tools to help you manage API keys securely:
-
-**Critical Configuration Step:**
-The API key must be the same in two locations:
-
-- Root `.env` file's `API_KEY`
-- Frontend's `.env.development` file's `REACT_APP_API_KEY`
-
-Example:
-
-```
-# In root .env
-API_KEY=your_secure_api_key
-
-# In frontend/.env.development
-REACT_APP_API_KEY=your_secure_api_key  # Must match the root API_KEY
-```
-
-🚨 Warning:
-
-Mismatched API keys will cause authentication failures
-Always use the same secure key in both locations
-Never commit real API keys to version control
-
 ### Setting Up Environment Variables
 
 The `npm run setup` command helps you securely configure your environment:
@@ -128,7 +102,7 @@ npm run security-check
 
 ## 🔐 Environment Configuration
 
-The project uses `.env` files for configuration. Refer to `.env.example` for required variables.
+The project uses `.env` files for configuration. For required variables, refer to `.env.example`.
 
 ### Backend Environment Variables
 
