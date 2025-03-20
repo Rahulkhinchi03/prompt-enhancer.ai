@@ -1,8 +1,17 @@
 // Configuration
-const API_BASE_URL = process.env.NODE_ENV === 'development'
-    ? 'http://localhost:5000/v1'
-    : 'https://prompt-enhancer.ai/v1';
-const API_KEY = process.env.REACT_APP_API_KEY || 'qmy4UPLwLcJ9d1rPhqzBmdq2SqcFCk';
+const API_BASE_URL = process.env.REACT_APP_API_URL ||
+    (process.env.NODE_ENV === 'development'
+        ? 'http://localhost:5000/v1'
+        : 'https://prompt-enhancer.ai/v1');
+
+const API_KEY = process.env.REACT_APP_API_KEY;
+
+// Debug logging for API configuration
+console.log('API Configuration:', {
+    baseUrl: API_BASE_URL,
+    apiKeyAvailable: !!API_KEY,
+    apiKeyPrefix: API_KEY ? API_KEY.substring(0, 4) : 'Not set'
+});
 
 // Utility function for logging
 function logApiError(context, error) {
@@ -24,6 +33,11 @@ class APIError extends Error {
 
 // Base fetch wrapper with enhanced error handling
 async function apiFetch(url, options = {}) {
+    if (!API_KEY) {
+        console.error('API Key is not configured! Check your .env or .env.development file.');
+        throw new APIError('API Key is not configured', 500);
+    }
+
     const defaultHeaders = {
         'Content-Type': 'application/json',
         'X-API-Key': API_KEY
@@ -38,6 +52,7 @@ async function apiFetch(url, options = {}) {
     };
 
     try {
+        console.log('Making API request to:', url);
         const response = await fetch(url, config);
         console.log('Response status:', response.status);
 

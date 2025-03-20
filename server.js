@@ -56,7 +56,7 @@ if (!validation.valid) {
 // Start the server
 app.listen(PORT, () => {
     console.log('\n----------------------------------------');
-    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`🚀 Server running on http://localhost:3000`);
     console.log('----------------------------------------');
     console.log(`📝 API Documentation: http://localhost:${PORT}/docs`);
     console.log(`🔒 Security: Rate limiting and DDoS protection active`);
