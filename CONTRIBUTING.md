@@ -82,7 +82,6 @@ This project and everyone participating in it are governed by our [Code of Condu
    ```bash
    cd frontend
    npm install
-   npm run setup
    ```
 
 4. Run the Application
