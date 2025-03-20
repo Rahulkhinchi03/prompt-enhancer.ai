@@ -1,4 +1,4 @@
-# AI Prompt Enhancer 🚀✨
+# AI Prompt Enhancer 🚀
 
 ## Overview
 
