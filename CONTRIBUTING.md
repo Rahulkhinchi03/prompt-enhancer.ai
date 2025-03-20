@@ -66,8 +66,8 @@ This project and everyone participating in it are governed by our [Code of Condu
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/Rahulkhinchi03/prompt-enhancer.git
-   cd prompt-enhancer
+   git clone https://github.com/Rahulkhinchi03/prompt-enhancer.ai.git
+   cd prompt-enhancer.ai
    ```
 
 2. Setup Backend
