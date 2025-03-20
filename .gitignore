@@ -16,6 +16,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .secure-keys.json
+package-lock.json
 
 # Environment Variables
 .env
