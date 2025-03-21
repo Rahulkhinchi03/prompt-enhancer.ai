@@ -77,6 +77,31 @@ function cleanMarkdownFormatting(text) {
 }
 
 /**
+ * Decode HTML entities in a string
+ * @param {string} text - Text with HTML entities
+ * @returns {string} - Text with decoded HTML entities
+ */
+function decodeHtmlEntities(text) {
+    if (!text) return text;
+
+    // Manual replacement of common entities (safe for Node.js environment)
+    return text
+        .replace(/&quot;/g, '"')
+        .replace(/&apos;/g, "'")
+        .replace(/&#039;/g, "'")
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&amp;/g, '&')
+        .replace(/&#38;/g, '&')
+        .replace(/&#34;/g, '"')
+        .replace(/&#39;/g, "'")
+        .replace(/&#60;/g, '<')
+        .replace(/&#62;/g, '>')
+        .replace(/&#x([0-9a-f]+);/gi, (match, hex) => String.fromCharCode(parseInt(hex, 16)))
+        .replace(/&#(\d+);/g, (match, dec) => String.fromCharCode(dec));
+}
+
+/**
  * Creates guidance for avoiding overused language and AI-sounding text
  * @param {string} originalPrompt - The original prompt for context
  * @returns {string} Guidance for creating better content
@@ -237,9 +262,10 @@ function sanitizeInput(text) {
     // Replace potentially dangerous HTML tags and scripts
     return text
         .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
+        .replace(/>/g, '&gt;');
+    // Note: We're NOT encoding quotes anymore to avoid the &quot; issue
+    // .replace(/"/g, '&quot;')
+    // .replace(/'/g, '&#039;');
 }
 
 /**
@@ -262,7 +288,7 @@ async function enhancePrompt(params) {
         throw new Error(`Prompt is too long (maximum ${MAX_LENGTH} characters)`);
     }
 
-    // Sanitize the input
+    // Sanitize the input - but don't encode quotes
     const sanitizedPrompt = sanitizeInput(originalPrompt);
 
     try {
@@ -287,11 +313,20 @@ async function enhancePrompt(params) {
             }
         }
 
-        // Sanitize the output to be extra safe
+        // Decode any HTML entities in the response
+        enhancedPrompt = decodeHtmlEntities(enhancedPrompt);
+
+        // Sanitize the output, but don't encode quotes
         enhancedPrompt = sanitizeInput(enhancedPrompt);
 
-        // Clean the enhanced prompt
+        // Clean the enhanced prompt of markdown formatting
         enhancedPrompt = cleanMarkdownFormatting(enhancedPrompt);
+
+        // Perform a final pass to replace any remaining encoded quotes
+        enhancedPrompt = enhancedPrompt
+            .replace(/&quot;/g, '"')
+            .replace(/&#039;/g, "'")
+            .replace(/&apos;/g, "'");
 
         // Add content guidance 
         const contentGuidance = createContentGuidance(originalPrompt);
