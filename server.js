@@ -32,7 +32,6 @@ console.log(`AI Provider: ${process.env.AI_PROVIDER || 'openai'}`);
 
 if (process.env.AI_PROVIDER === 'openai') {
     console.log(`OpenAI API Key: ${keyStatus.openai?.available ? '✅ Available' : '❌ Missing'}`);
-    console.log(`OpenAI Org ID: ${keyStatus.openaiOrg?.available ? '✅ Available' : '⚠️ Not Set (Optional)'}`);
 } else if (process.env.AI_PROVIDER === 'mistral') {
     console.log(`Mistral API Key: ${keyStatus.mistral?.available ? '✅ Available' : '❌ Missing'}`);
 }
@@ -56,7 +55,7 @@ if (!validation.valid) {
 // Start the server
 app.listen(PORT, () => {
     console.log('\n----------------------------------------');
-    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`🚀 Server running on http://localhost:3000`);
     console.log('----------------------------------------');
     console.log(`📝 API Documentation: http://localhost:${PORT}/docs`);
     console.log(`🔒 Security: Rate limiting and DDoS protection active`);
