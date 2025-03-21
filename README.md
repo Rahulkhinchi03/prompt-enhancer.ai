@@ -1,4 +1,4 @@
-# AI Prompt Enhancer 🚀✨
+# AI Prompt Enhancer 🚀
 
 ## Overview
 
@@ -17,9 +17,11 @@ AI Prompt Enhancer is designed to transform basic prompts into optimized, high-q
   - React
   - Tailwind CSS
   - Radix UI Components
+
 - **Backend**:
   - Node.js
   - Express.js
+
 - **AI Providers**:
   - Mistral AI
   - OpenAI
@@ -37,21 +39,21 @@ AI Prompt Enhancer is designed to transform basic prompts into optimized, high-q
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/Rahulkhinchi03/prompt-enhancer.git
-   cd prompt-enhancer
+   git clone https://github.com/Rahulkhinchi03/prompt-enhancer.ai.git
+   cd prompt-enhancer.ai
+   ```
+
+2. Setup Frontend
+
+   ```bash
+   cd frontend
+   npm install
    ```
 
 2. Setup Backend
 
    ```bash
-   npm install
-   npm run setup
-   ```
-
-3. Setup Frontend
-
-   ```bash
-   cd frontend
+    cd ..
    npm install
    npm run setup
    ```
@@ -59,41 +61,8 @@ AI Prompt Enhancer is designed to transform basic prompts into optimized, high-q
 4. Run the Application
 
    ```bash
-   # From project root
    npm run dev  # Starts both frontend and backend
    ```
-
-## 🔐 API Key Security
-
-This project includes several tools to help you manage API keys securely:
-
-**Critical Configuration Step:**
-The API key must be the same in two locations:
-
-- Root `.env` file's `API_KEY`
-- Frontend's `.env.development` file's `REACT_APP_API_KEY`
-
-Example:
-
-```
-# In root .env
-API_KEY=your_secure_api_key
-
-# In frontend/.env.development
-REACT_APP_API_KEY=your_secure_api_key  # Must match the root API_KEY
-```
-
-🚨 **Warning:**
-
-- Mismatched API keys will cause authentication failures
-- Always use the same secure key in both locations
-- Never commit real API keys to version control
-
-🚨 Warning:
-
-Mismatched API keys will cause authentication failures
-Always use the same secure key in both locations
-Never commit real API keys to version control
 
 ### Setting Up Environment Variables
 
@@ -130,11 +99,9 @@ npm run security-check
 - Git ignorance of sensitive files
 - Validation checks on startup
 
-For more details, see [SECURITY.md](SECURITY.md).
-
 ## 🔐 Environment Configuration
 
-The project uses `.env` files for configuration. Refer to `.env.example` for required variables.
+The project uses `.env` files for configuration. For required variables, refer to `.env.example`.
 
 ### Backend Environment Variables
 
@@ -153,37 +120,20 @@ The project uses `.env` files for configuration. Refer to `.env.example` for req
 
 We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
-# Project Attribution
 
-## Creator
+# Powered By Treblle
 
-**Rahul Khinchi**
-
-- GitHub: [@Rahulkhinchi03](https://github.com/Rahulkhinchi03)
-
-## Powered By
-
-### Treblle
+Treblle](https://treblle.com) is an API Intelligence platform that empowers companies looking to connect the dots between APIs and their business development.
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/54f0c084-65bb-4431-b80d-cceab6c63dc3"/>
 </div>
-<div align="center">
-
-**About Treblle:**
-Treblle is an API Intelligence platform that empowers companies looking to connect the dots between APIs and their business development.  
 
 **Treblle's Contribution:**
 
 - Provided infrastructure and development support
 - Enabled advanced API monitoring and management
 - Supported open-source innovation
-
-### Licensing and Rights
-
-- Project Code: MIT License
-- Treblle Logo and Branding: © Treblle
-- Project Assets: © Rahul Khinchi
 
 ## 🙏 Acknowledgments
 
