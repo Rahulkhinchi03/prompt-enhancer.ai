@@ -123,7 +123,7 @@ We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING
 
 # Powered By Treblle
 
-Treblle](https://treblle.com) is an API Intelligence platform that empowers companies looking to connect the dots between APIs and their business development.
+[Treblle](https://treblle.com) is an API Intelligence platform that empowers companies looking to connect the dots between APIs and their business development.
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/54f0c084-65bb-4431-b80d-cceab6c63dc3"/>
